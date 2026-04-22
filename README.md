@@ -1,8 +1,8 @@
 # Job Sourcing & Employer Outreach Platform
 
-Mobile-first interne Next.js-Anwendung für Job Sourcing, Jobanalyse, Employer Enrichment und review-basierten Outreach. Phase 1 nutzt bewusst einen austauschbaren Mock-Provider und In-Memory-Repositories, damit UI, API und Workflows schon jetzt end-to-end testbar sind.
+Mobile-first interne Next.js-Anwendung fuer Job Sourcing, Jobanalyse, Employer Enrichment und review-basierten Outreach. Phase 1 nutzt bewusst einen austauschbaren Mock-Provider und In-Memory-Repositories, damit UI, API und Workflows schon jetzt end-to-end testbar sind.
 
-Die aktuelle Version kann zusätzlich einen echten Apify-Actor als Search Provider nutzen, wenn die nötigen `env.local`-Werte vorhanden sind.
+Die aktuelle Version kann zusaetzlich einen echten Apify-Actor als Search Provider nutzen, wenn die noetigen `env.local`-Werte vorhanden sind.
 
 ## Stack
 
@@ -23,9 +23,9 @@ npm install
 npm run dev
 ```
 
-Danach läuft die App unter `http://localhost:3000`.
+Danach laeuft die App unter `http://localhost:3000`.
 
-Für die Apify-Integration optional in `.env.local` hinterlegen:
+Fuer die Apify-Integration optional in `.env.local` hinterlegen:
 
 ```bash
 APIFY_API_TOKEN=...
@@ -36,7 +36,7 @@ APIFY_DATASET_LIMIT_DEFAULT=100
 
 ## Apify CLI
 
-Die App nutzt für den produktiven Search-Provider das offizielle `apify-client` SDK. Zusätzlich ist die Apify CLI hilfreich, um Actor-Runs lokal zu prüfen oder unabhängig von der App zu debuggen.
+Die App nutzt fuer den produktiven Search-Provider das offizielle `apify-client` SDK. Zusaetzlich ist die Apify CLI hilfreich, um Actor-Runs lokal zu pruefen oder unabhaengig von der App zu debuggen.
 
 ### Installation unter Windows
 
@@ -44,7 +44,7 @@ Die App nutzt für den produktiven Search-Provider das offizielle `apify-client`
 irm https://apify.com/install-cli.ps1 | iex
 ```
 
-Nach der Installation kann es sein, dass du ein neues Terminal öffnen musst. Falls `apify` im aktuellen Terminal noch nicht gefunden wird, funktioniert auf diesem Rechner direkt:
+Nach der Installation kann es sein, dass du ein neues Terminal oeffnen musst. Falls `apify` im aktuellen Terminal noch nicht gefunden wird, funktioniert auf diesem Rechner direkt:
 
 ```powershell
 C:\Users\Vardar\.apify\bin\apify.exe --version
@@ -78,7 +78,7 @@ Oder mit Input-Datei:
 apify call <actor-id> --input-file .\actor-input.json --output-dataset
 ```
 
-### Nützliche CLI-Kommandos
+### Nuetzliche CLI-Kommandos
 
 ```powershell
 apify --version
@@ -133,9 +133,9 @@ src/
 
 ## MVP-Umfang
 
-Phase 1 enthält:
+Phase 1 enthaelt:
 
-- Dashboard mit KPI-Karten, Quick Actions, Run-Übersicht und Activity Feed
+- Dashboard mit KPI-Karten, Quick Actions, Run-Uebersicht und Activity Feed
 - Search Profile CRUD
 - Mock Search Runs
 - Jobliste und Jobdetail
@@ -156,23 +156,23 @@ Die App koppelt sich nicht direkt an Mock-Daten, sondern an den Vertrag `SearchP
 - Mock-Implementierung: [`src/providers/mock/MockSearchProvider.ts`](src/providers/mock/MockSearchProvider.ts)
 - Apify-Implementierung: [`src/providers/apify/ApifySearchProvider.ts`](src/providers/apify/ApifySearchProvider.ts)
 - Apify-Client: [`src/providers/apify/ApifyClient.ts`](src/providers/apify/ApifyClient.ts)
-- zukünftige Provider-Stubs:
+- zukuenftige Provider-Stubs:
   - [`src/providers/future/StepstoneProvider.ts`](src/providers/future/StepstoneProvider.ts)
   - [`src/providers/future/IndeedProvider.ts`](src/providers/future/IndeedProvider.ts)
   - [`src/providers/future/LinkedInReferenceProvider.ts`](src/providers/future/LinkedInReferenceProvider.ts)
   - [`src/providers/future/CareerPageCrawlerProvider.ts`](src/providers/future/CareerPageCrawlerProvider.ts)
 
-Der Rest des Systems arbeitet ausschließlich mit normalisierten Jobdaten.
+Der Rest des Systems arbeitet ausschliesslich mit normalisierten Jobdaten.
 
-### 2. In-Memory jetzt, Mongo-ready später
+### 2. In-Memory jetzt, Mongo-ready spaeter
 
-Phase 1 nutzt Seed-Daten plus In-Memory-Repositories. Die Business-Logik hängt an Repository-Verträgen statt direkt an einem Storage-Format.
+Phase 1 nutzt Seed-Daten plus In-Memory-Repositories. Die Business-Logik haengt an Repository-Vertraegen statt direkt an einem Storage-Format.
 
 - App Context / Singleton: [`src/lib/db/app-store.ts`](src/lib/db/app-store.ts)
 - Seed-Daten: [`src/seed/index.ts`](src/seed/index.ts)
 - Repositories: [`src/repositories`](src/repositories)
 
-Für MongoDB kann später pro Repository eine neue Implementierung ergänzt werden, ohne UI oder Services umzubauen.
+Fuer MongoDB kann spaeter pro Repository eine neue Implementierung ergaenzt werden, ohne UI oder Services umzubauen.
 
 ### 3. Analysis as Service
 
@@ -194,10 +194,10 @@ Aktuell liefert sie:
 Outreach bleibt bewusst review-first.
 
 - Entwurf erzeugen
-- Nachricht prüfen
+- Nachricht pruefen
 - Freigeben
 - Mock versenden
-- Aktivität protokollieren
+- Aktivitaet protokollieren
 
 Zentrale Services:
 
@@ -212,7 +212,7 @@ Wenn `APIFY_API_TOKEN` und `APIFY_ACTOR_ID` gesetzt sind, verwendet die App auto
 Der Flow:
 
 1. Search Run starten
-2. Apify Actor asynchron anstoßen
+2. Apify Actor asynchron anstossen
 3. Run-Status on-demand pollen
 4. Dataset-Ergebnisse normalisieren
 5. Jobs importieren und deduplizieren
@@ -227,7 +227,7 @@ Neue Run-Metadaten umfassen:
 - `errorMessage`
 - `resultsImported`
 
-## API-Übersicht
+## API-Uebersicht
 
 ### Search Profiles
 
@@ -281,7 +281,7 @@ Neue Run-Metadaten umfassen:
 
 ## Seed-Daten
 
-Die Seeds erzeugen ein realistisches internes Toolgefühl:
+Die Seeds erzeugen ein realistisches internes Toolgefuehl:
 
 - 4 Search Profiles
 - 3 Search Runs
@@ -301,21 +301,21 @@ Aktuell enthalten:
 - Analysis-Service-Test
 - Template-Service-Test
 - Repository-Test
-- UI-Test für Status-Badges
+- UI-Test fuer Status-Badges
 
 Tests liegen unter [`src/test`](src/test).
 
-Zusätzliche Apify-Tests:
+Zusaetzliche Apify-Tests:
 
 - `ApifyClient`
 - `ApifySearchProvider`
 - `SearchService` Run-/Polling-Flow
 
-## Spätere Erweiterung um echte Provider
+## Spaetere Erweiterung um echte Provider
 
-Für Phase 2+ ist vorgesehen:
+Fuer Phase 2+ ist vorgesehen:
 
-1. Neue Provider-Klassen implementieren, die `SearchProvider` erfüllen.
+1. Neue Provider-Klassen implementieren, die `SearchProvider` erfuellen.
 2. Provider-Auswahl im `SearchService` dynamisch konfigurieren.
 3. In-Memory-Repositories durch MongoDB-Repositories ersetzen.
 4. CRM Sync Placeholder gegen echte Integrationen austauschen.
@@ -327,4 +327,4 @@ Für Phase 2+ ist vorgesehen:
 - Kein echtes E-Mail- oder LinkedIn-Sending
 - Kein Auth- oder Rollenmodell
 - Kein produktiver CRM-Sync
-- Fokus auf lokale Lauffähigkeit, klare Architektur und Erweiterbarkeit
+- Fokus auf lokale Lauffaehigkeit, klare Architektur und Erweiterbarkeit
