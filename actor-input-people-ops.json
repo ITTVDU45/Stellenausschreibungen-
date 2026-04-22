@@ -1,0 +1,25 @@
+{
+  "profileId": "profile_remote_people_ops",
+  "targetRole": "People Operations Partner",
+  "targetRegion": "Remote Europe",
+  "targetCountry": "Deutschland",
+  "includeKeywords": [
+    "people ops",
+    "remote",
+    "employee experience"
+  ],
+  "excludeKeywords": [
+    "assistant"
+  ],
+  "languages": [
+    "Deutsch",
+    "Englisch"
+  ],
+  "industry": "HR Tech",
+  "activeSources": [
+    "mock_linkedin_reference"
+  ],
+  "page": 1,
+  "pageSize": 12,
+  "maxItems": 12
+}

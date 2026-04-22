@@ -1,0 +1,27 @@
+{
+  "profileId": "profile_recruiting_healthcare",
+  "targetRole": "Talent Acquisition Specialist",
+  "targetRegion": "Deutschland Süd",
+  "targetCountry": "Deutschland",
+  "includeKeywords": [
+    "recruiting",
+    "healthcare",
+    "talent acquisition"
+  ],
+  "excludeKeywords": [
+    "intern",
+    "student"
+  ],
+  "languages": [
+    "Deutsch",
+    "Englisch"
+  ],
+  "industry": "Healthcare",
+  "activeSources": [
+    "mock_stepstone",
+    "mock_indeed"
+  ],
+  "page": 1,
+  "pageSize": 12,
+  "maxItems": 12
+}

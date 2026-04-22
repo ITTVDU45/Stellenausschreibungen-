@@ -1,0 +1,29 @@
+{
+  "profileId": "profile_berlin_sales_ops",
+  "targetRole": "Sales Operations Manager",
+  "targetRegion": "DACH",
+  "targetCountry": "Deutschland",
+  "includeKeywords": [
+    "sales ops",
+    "crm",
+    "hubspot",
+    "pipeline"
+  ],
+  "excludeKeywords": [
+    "praktikum",
+    "werkstudent"
+  ],
+  "languages": [
+    "Deutsch",
+    "Englisch"
+  ],
+  "industry": "SaaS",
+  "activeSources": [
+    "mock_stepstone",
+    "mock_indeed",
+    "mock_linkedin_reference"
+  ],
+  "page": 1,
+  "pageSize": 12,
+  "maxItems": 12
+}

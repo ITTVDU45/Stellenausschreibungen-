@@ -1,0 +1,28 @@
+{
+  "profileId": "profile_relocation_blue_collar",
+  "targetRole": "International Recruiting Lead",
+  "targetRegion": "Deutschland West",
+  "targetCountry": "Deutschland",
+  "includeKeywords": [
+    "relocation",
+    "visa",
+    "recruiting",
+    "blue collar"
+  ],
+  "excludeKeywords": [
+    "senior director"
+  ],
+  "languages": [
+    "Deutsch",
+    "Polnisch",
+    "Englisch"
+  ],
+  "industry": "Mobility",
+  "activeSources": [
+    "mock_indeed",
+    "mock_linkedin_reference"
+  ],
+  "page": 1,
+  "pageSize": 12,
+  "maxItems": 12
+}
